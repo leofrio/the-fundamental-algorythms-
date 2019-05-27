@@ -1,0 +1,29 @@
+<script> 
+function skip() { 
+	document.write("<br>")
+}
+function show(text) { 
+	document.write(text)
+	skip()
+}
+var limit=parseInt(prompt("how many elements in this array?"))
+var a=[]  
+var b; 
+var c;
+var biggest;
+for(var i = 0; i < limit;i++) { 
+	a[i]=Math.round(Math.random() * 1000) 
+	console.log(a[i])
+}
+for(var f =1;f <= a.length-1;f++) { 
+	for(var i =0; i < a.length-f;i++) { 
+		b=a[i] 
+		c=a[i+1]
+		if(a[i] > a[i+1]) { 
+			a[i]=c 
+			a[i+1]=b
+		}
+	} 
+} 
+document.write(a)
+</script> 
