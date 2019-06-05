@@ -1,0 +1,30 @@
+<script>
+function skip() { 
+	document.write("<br>")
+}
+function show(text) { 
+	document.write(text) 
+	skip()
+} 
+var limit=parseInt(prompt("what is going to be the size of this array?"))
+var a = [] 
+var smallest;
+var position;
+for(var i=0; i < limit-1 ;i++) { 
+	a[i]=Math.round(Math.random() * 100) 
+	console.log(a[i])
+} 
+for(var i=0 ; i < a.length;i++) { 
+	smallest=a[i] 
+	position=i
+	for(var f=i; f < a.length;f++) { 
+		if(smallest > a[f]) { 
+			smallest=a[f]
+			position=f
+		}
+	}  
+	a[position]=a[i]
+	a[i]=smallest
+}   
+show(a)
+</script>
